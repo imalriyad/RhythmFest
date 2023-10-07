@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div>
       <div
-        className="rounded-lg h-[70vh] md:h-[60vh] "
+        className="rounded-xl h-[70vh] md:h-[60vh] "
         style={{
           backgroundImage: "url(https://i.ibb.co/nrRXBGQ/hero.jpg)",
           objectFit:'cover'
@@ -10,14 +10,15 @@ const Banner = () => {
       >
         <div className="md:px-8 px-4">
           <div className="md:py-[13%] py-[10%] md:px-10">
-          <h1 className="mb-5 md:text-5xl text-3xl font-bold">
-            Music to fill your <span className="text-primary font-bold">heart</span>
+          <h1 className="mb-6 md:text-5xl text-3xl font-bold">
+            Music to fill your <span className="text-maincolor font-bold">heart</span>
           </h1>
-          <p className="mb-5">
+          <p className="mb-6 text-lg">
             Get playlists and albums inspired by the artists and genres <br /> you are
             listing to. 1 month free.
           </p>
-          <button className="btn btn-primary ">Get Started</button>
+          <button className="btn normal-case md:px-8 px-6">Try it free</button>
+          <button className=" btn ml-3 btn-outline normal-case md:px-8 px-6">Discover</button>
           </div>
         </div>
       </div>

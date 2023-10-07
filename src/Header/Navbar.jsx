@@ -1,10 +1,14 @@
+import { NavLink } from "react-router-dom";
+
 const NavbarMenuBar = () => {
   const menuItems = ["Home", "About", "Events", "Blogs", "Gallery", "Contact"];
 
   const menu = menuItems.map((item) => (
-    <li key={item}>
-      <a>{item}</a>{" "}
-    </li>
+    <NavLink key={item} to={`${item === "Home" ? "/" : item}`}>
+      <li>
+        <a>{item}</a>
+      </li>
+    </NavLink>
   ));
 
   return (
@@ -35,16 +39,18 @@ const NavbarMenuBar = () => {
               {menu}
             </ul>
           </div>
-          <a className="w-6/6 md:w-6/12"><img src="/public/logo.png" alt="" /></a>
+          <a className="w-6/6 md:w-6/12">
+            <img src="/public/logo.png" alt="" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu text-base  menu-horizontal px-1">{menu}</ul>
+          <ul className="gap-x-8 text-base menu-horizontal ">{menu}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Login</a>
+          <a className="btn px-8 mr-3">Login</a>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
+              <div className="w-12 border border-black rounded-full">
                 <img src="/src/assets/react.svg" />
               </div>
             </label>
@@ -62,7 +68,7 @@ const NavbarMenuBar = () => {
                 <a>Settings</a>
               </li>
               <button className="btn btn-outline mt-2">
-                <a >Logout</a>
+                <a>Logout</a>
               </button>
             </ul>
           </div>
