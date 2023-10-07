@@ -47,7 +47,7 @@ const NavbarMenuBar = () => {
           <ul className="gap-x-8 text-base menu-horizontal ">{menu}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn px-8 mr-3">Login</a>
+          <a className="btn bg-maincolor hover:bg-maincolor text-white px-8 mr-3">Login</a>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-12 border border-black rounded-full">

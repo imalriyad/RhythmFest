@@ -1,8 +1,8 @@
 const Banner = () => {
   return (
-    <div>
+    <div className="px-4">
       <div
-        className="rounded-xl h-[70vh] md:h-[60vh] "
+        className="rounded-xl h-[60vh] "
         style={{
           backgroundImage: "url(https://i.ibb.co/nrRXBGQ/hero.jpg)",
           objectFit:'cover'

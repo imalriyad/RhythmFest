@@ -4,4 +4,5 @@
 
 div a.active{
     border-bottom: 2px solid #155CC6;
+    color: #155CC6;
 }
