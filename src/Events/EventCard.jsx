@@ -2,11 +2,12 @@
 import { AiFillClockCircle } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoTicketSharp } from "react-icons/io5";
+import { BiSolidBadgeDollar } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const EventCard = ({card}) => {
-   console.log(card);
-   const {eventDate,eventDescription,eventImage,eventLocation,eventName,eventTime,id} = card
+
+   const {eventDate,eventDescription,eventImage,eventLocation,eventName,eventTime,ticketPrice,id,} = card
   return (
     <div className="shadow-md border rounded-md relative p-5">
         <img
@@ -27,9 +28,13 @@ const EventCard = ({card}) => {
           <AiFillClockCircle className="text-2xl text-maincolor" />
           {eventTime}
         </div>
-        <div className="flex gap-2 mb-14 mt-3 items-center">
+        <div className="flex gap-2 mb-3 mt-3 items-center">
           <FaLocationDot className="text-2xl text-maincolor" />
          {eventLocation}
+        </div>
+        <div className="flex gap-2  mb-14 items-center">
+          <BiSolidBadgeDollar className="text-2xl text-maincolor" />
+          Ticket Price ${ticketPrice}
         </div>
        <Link to={`/eventdetails/${id}`}> <button className="btn left-[5%] my-5 absolute bottom-0 text-white hover:bg-[#0043a7] bg-maincolor w-[90%]"> <IoTicketSharp className="text-2xl"/>TICKETS & DETAILS</button></Link>
       </div>

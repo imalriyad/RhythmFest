@@ -6,10 +6,13 @@ import About from "../Pages/About";
 import Blogs from "../Pages/Blogs";
 import Gallery from "../Pages/Gallery";
 import Contact from "../Pages/Contact";
+import Eventdetails from "../Events/Eventdetails";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     element: <Layout></Layout>,
     children: [
       {
@@ -35,6 +38,11 @@ const router = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/eventdetails/:eventId",
+        element: <Eventdetails></Eventdetails>,
+        loader: () => fetch("https://api.npoint.io/5b9e286fdc8f467883c3"),
       },
     ],
   },
