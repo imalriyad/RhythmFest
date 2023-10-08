@@ -1,15 +1,38 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/firebase.config";
 
 const Registraion = () => {
-    const { Registration}
+    const { creatUser} = useContext(AuthContext)
+  
+    const resgistrationHandle = (e) =>{
+      e.preventDefault()
+       const name = e.target.name.value
+       const email = e.target.email.value
+       const password = e.target.password.value
+       const photoUrl = e.target.photourl.value
+       creatUser(email,password)
+       .then(() =>{
+        updateProfile(auth.currentUser,{
+          displayName: name,
+          photoURL:`${photoUrl}`
+        })
+        .then(()=> console.log('profile updated!'))
+        .catch(err => console.log(err))
+       })
+       .catch(err=>console.log(err))
+    }
   return (
     <div className="px-4">
       <div className="w-full max-w-sm mx-auto mt-[5%] p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <htmlForm className="space-y-6" action="#">
+        <htmlForm className="space-y-6">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
              Registration
           </h5>
-          <div>
+         <form onSubmit={resgistrationHandle} className="space-y-3">
+         <div>
             <label
               htmlFor="name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -34,7 +57,7 @@ const Registraion = () => {
             </label>
             <input
               type="text"
-              name="photo"
+              name="photourl"
               id="photourl"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               placeholder="Your photo url"
@@ -69,17 +92,18 @@ const Registraion = () => {
               name="password"
               id="password"
               placeholder="••••••••"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+              className="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               required
             />
           </div>
-          
+        
           <button
             type="submit"
             className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Registration
           </button>
+          </form>
           <div className="text-sm flex gap-x-1 font-medium text-gray-500 dark:text-gray-300">
             Already have an account?{" "}
             <p className="text-blue-700 hover:underline dark:text-blue-500">
