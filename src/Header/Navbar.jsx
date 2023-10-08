@@ -57,7 +57,7 @@ const NavbarMenuBar = () => {
           <ul className="gap-x-8 text-base menu-horizontal ">{menu}</ul>
         </div>
         <div className="navbar-end">
-          {user?.photoURL ? (
+          {user?.displayName ? (
             <h1 className="font-bold text-maincolor mr-3">
               {user?.displayName}
             </h1>
@@ -84,18 +84,16 @@ const NavbarMenuBar = () => {
               tabIndex={0}
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <button onClick={logOutHandler} className="btn btn-outline mt-2">
-                <a>Logout</a>
+          
+              <button className="btn btn-outline">
+              Profile
               </button>
+         
+              {
+                user ? <button onClick={logOutHandler} className="btn mt-2 btn-outline">
+                <a>Logout</a>
+              </button> : <Link to={'/Login'} className="btn mt-2 btn-outline">Login</Link>
+              }
             </ul>
           </div>
         </div>
