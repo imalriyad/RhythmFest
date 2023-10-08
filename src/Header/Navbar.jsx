@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 
 const NavbarMenuBar = () => {
   const menuItems = ["Home", "About", "Events", "Blogs", "Gallery", "Contact"];
@@ -47,11 +48,13 @@ const NavbarMenuBar = () => {
           <ul className="gap-x-8 text-base menu-horizontal ">{menu}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-maincolor hover:bg-maincolor text-white md:px-8 mr-3">Login</a>
+    
+      <Link to={'/Login'}>  <button className="btn bg-maincolor hover:bg-maincolor text-white md:px-8 mr-3">Login</button></Link>
+
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-12 border border-black rounded-full">
-                <img src="https://i.ibb.co/cQmcvfp/blankdp.png" />
+                <img src="https://i.ibb.co/3CNtLPY/blankdp.png" />
               </div>
             </label>
             <ul

@@ -1,15 +1,12 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
 const Artists = () => {
-    return (
-        <div>
-            <Swiper
+  return (
+    <div className="my-5">
+      <Swiper
         slidesPerView={4}
         centeredSlides={true}
         spaceBetween={10}
@@ -21,21 +18,51 @@ const Artists = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><img src="https://i.ibb.co/r7c19BY/tylorswift.jpg" className='rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]' alt="Taylor Swift" />
+        <SwiperSlide>
+          <img
+            src="https://i.ibb.co/r7c19BY/tylorswift.jpg"
+            className="rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]"
+            alt="Taylor Swift"
+          />
         </SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/pJWvJpk/thewekeend.jpg" className='rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]' alt="The Weeknd" /></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/NpFWwLr/imanginedragon.jpg" className='rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]' alt="Imagine Dragons" />
-</SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/XkmZs0q/justinbiber.jpg" className='rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]' alt="Justin Bieber" />
-</SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/g6g7CLM/alanwalker.jpg" className='rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]' alt="Alan Walker" />
-</SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/FgR18P2/dualipa.jpg" className='rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]' alt="Dua Lipa" />
-</SwiperSlide>
-   
+        <SwiperSlide className="relative">
+          <img
+            src="https://i.ibb.co/pJWvJpk/thewekeend.jpg"
+            className="rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]"
+            alt="The Weeknd"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://i.ibb.co/NpFWwLr/imanginedragon.jpg"
+            className="rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]"
+            alt="Imagine Dragons"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://i.ibb.co/XkmZs0q/justinbiber.jpg"
+            className="rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]"
+            alt="Justin Bieber"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://i.ibb.co/g6g7CLM/alanwalker.jpg"
+            className="rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]"
+            alt="Alan Walker"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://i.ibb.co/FgR18P2/dualipa.jpg"
+            className="rounded-full md:w-[300px] md:h-[300px] w-[67px] h-[67px]"
+            alt="Dua Lipa"
+          />
+        </SwiperSlide>
       </Swiper>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Artists;
