@@ -1,9 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
-
+import { AuthContext } from "../Context/AuthProvider";
+import { useContext } from "react";
+import { signOut } from "firebase/auth";
+import auth from "../Firebase/firebase.config";
 
 const NavbarMenuBar = () => {
+  const { user } = useContext(AuthContext);
+  const logOutHandler = () => {
+    signOut(auth)
+      .then(() => console.log("Logout sucessful"))
+      .catch((err) => console.log(err));
+  };
   const menuItems = ["Home", "About", "Events", "Blogs", "Gallery", "Contact"];
-
   const menu = menuItems.map((item) => (
     <NavLink key={item} to={`${item === "Home" ? "/" : item}`}>
       <li>
@@ -48,13 +56,27 @@ const NavbarMenuBar = () => {
           <ul className="gap-x-8 text-base menu-horizontal ">{menu}</ul>
         </div>
         <div className="navbar-end">
-    
-      <Link to={'/Login'}>  <button className="btn bg-maincolor hover:bg-maincolor text-white md:px-8 mr-3">Login</button></Link>
+          {user?.photoURL ? (
+            <h1 className="font-bold text-maincolor mr-3">
+              {user?.displayName}
+            </h1>
+          ) : (
+            <Link to={"/Login"}>
+              {" "}
+              <button className="btn bg-maincolor hover:bg-maincolor text-white md:px-8 mr-3">
+                Login
+              </button>
+            </Link>
+          )}
 
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-12 border border-black rounded-full">
-                <img src="https://i.ibb.co/3CNtLPY/blankdp.png" />
+              <div className="w-10 border-2 border-maincolor rounded-full">
+                {user?.photoURL ? (
+                  <img src={`${user?.photoURL}`} alt="" />
+                ) : (
+                  <img src="https://i.ibb.co/3CNtLPY/blankdp.png" />
+                )}
               </div>
             </label>
             <ul
@@ -70,7 +92,7 @@ const NavbarMenuBar = () => {
               <li>
                 <a>Settings</a>
               </li>
-              <button className="btn btn-outline mt-2">
+              <button onClick={logOutHandler} className="btn btn-outline mt-2">
                 <a>Logout</a>
               </button>
             </ul>

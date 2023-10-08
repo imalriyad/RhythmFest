@@ -1,19 +1,26 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 import { useContext } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { signin } = useContext(AuthContext);
   const loginHandler = (e) => {
     e.preventDefault();
+   
     const email = e.target.email.value;
     const password = e.target.password.value;
     signin(email, password)
-      .then((res) => console.log(res.user))
-      .catch((err) => console.log(err));
+      .then(() => {
+        e.target.reset()
+        toast.success('You are successfully logged in')
+      })
+      .catch((err) => toast.error(`${err.message.slice(17,).replace(")",'')}`));
   };
   return (
     <div className="px-4">
+      <div><Toaster/></div>
+
       <div className="w-full max-w-sm mx-auto mt-[4%] p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <htmlForm className="space-y-6" action="#">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
