@@ -1,9 +1,10 @@
+import Event from "../Events/Event";
 
 
 const Events = () => {
     return (
         <div>
-            <h1>This is Events</h1>
+         <Event></Event>
         </div>
     );
 };

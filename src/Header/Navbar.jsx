@@ -3,15 +3,16 @@ import { AuthContext } from "../Context/AuthProvider";
 import { useContext } from "react";
 import { signOut } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import toast from "react-hot-toast";
 
 const NavbarMenuBar = () => {
   const { user } = useContext(AuthContext);
   const logOutHandler = () => {
     signOut(auth)
-      .then(() => console.log("Logout sucessful"))
+      .then(() => toast.success("Logout sucessful"))
       .catch((err) => console.log(err));
   };
-  const menuItems = ["Home", "About", "Events", "Blogs", "Gallery", "Contact"];
+  const menuItems = ["Home","Events" ,"About", "Blogs", "Gallery", "Contact"];
   const menu = menuItems.map((item) => (
     <NavLink key={item} to={`${item === "Home" ? "/" : item}`}>
       <li>
@@ -63,7 +64,7 @@ const NavbarMenuBar = () => {
           ) : (
             <Link to={"/Login"}>
               {" "}
-              <button className="btn bg-maincolor hover:bg-maincolor text-white md:px-8 mr-3">
+              <button className="btn md:btn-md btn-sm bg-maincolor hover:bg-maincolor text-white md:px-8 mr-3">
                 Login
               </button>
             </Link>

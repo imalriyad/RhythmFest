@@ -5,41 +5,50 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [isLoading,setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true);
 
   const creatUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  const signin = (email, password) => {
-    setLoading(true)
+  const siginIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const googleSignIn = (googleAuthProvider) => {
+    return signInWithPopup(auth, googleAuthProvider);
+  };
 
-  useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(auth,(currentUser=>{
-      setUser(currentUser)
-      setLoading(false)
-    }))
-    return ()=> unsubscribe()
-  }),[]
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }),
+    [];
 
   const authentications = {
     user,
     creatUser,
-    signin,
+    siginIn,
+    googleSignIn,
+    isLoading
   };
-  return <div>
-   <AuthContext.Provider value={authentications}>
-   {children}
-   </AuthContext.Provider>
-  </div>;
+  return (
+    <div>
+      <AuthContext.Provider value={authentications}>
+        {children}
+      </AuthContext.Provider>
+    </div>
+  );
 };
 
 export default AuthProvider;

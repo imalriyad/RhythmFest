@@ -36,7 +36,7 @@ const EventCard = ({card}) => {
           <BiSolidBadgeDollar className="text-2xl text-maincolor" />
           Ticket Price ${ticketPrice}
         </div>
-       <Link to={`/eventdetails/${id}`}> <button className="btn left-[5%] my-5 absolute bottom-0 text-white hover:bg-[#0043a7] bg-maincolor w-[90%]"> <IoTicketSharp className="text-2xl"/>TICKETS & DETAILS</button></Link>
+       <Link state={id} to={`/eventdetails/${id}`}> <button className="btn left-[5%] my-5 absolute bottom-0 text-white hover:bg-[#0043a7] bg-maincolor w-[90%]"> <IoTicketSharp className="text-2xl"/>TICKETS & DETAILS</button></Link>
       </div>
  
   );

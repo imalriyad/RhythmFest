@@ -1,23 +1,37 @@
+/* eslint-disable no-useless-escape */
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const Registraion = () => {
-  const { creatUser } = useContext(AuthContext);
-
+  const { creatUser, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   const resgistrationHandle = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoUrl = e.target.photourl.value;
+    if (password.length < 6) {
+      return toast.error("Password must be at least 6 characters long.");
+    }
+    if (!/[!@#$%^&*()_=\[\]{};:'",<>?/\\|-]/.test(password)) {
+      return toast.error(
+        "Password must contain at least one special character."
+      );
+    }
+    if (!/[A-Z]/.test(password)) {
+      return toast.error("Password must contain at least one capital letter.");
+    }
+
     creatUser(email, password)
       .then(() => {
         e.target.reset();
         toast.success("Registration Successful");
+        navigate("/");
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: `${photoUrl}`,
@@ -27,11 +41,19 @@ const Registraion = () => {
       })
       .catch((err) => toast.error(`${err.message.slice(17).replace(")", "")}`));
   };
+
+  const googleSignInHandler = () => {
+    const gooleAuthProvider = new GoogleAuthProvider();
+    googleSignIn(gooleAuthProvider)
+      .then(() => {
+        toast.success("Successfully Registerd!");
+      })
+      .catch((error) =>
+        toast.error(`${error.message.slice(22).replace(")", "")}`)
+      );
+  };
   return (
     <div className="px-4">
-      <div>
-        <Toaster />
-      </div>
       <div className="w-full max-w-sm mx-auto mt-[5%] p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <htmlForm className="space-y-6">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
@@ -118,7 +140,7 @@ const Registraion = () => {
         </htmlForm>
         <div className="divider">continue with</div>
         <div className="flex">
-          <button className="btn w-full">
+          <button onClick={googleSignInHandler} className="btn w-full">
             <img
               className="h-[20px] w-[20px]"
               src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png"

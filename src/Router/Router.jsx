@@ -10,6 +10,7 @@ import Eventdetails from "../Events/Eventdetails";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Login from "../Pages/Login";
 import Registraion from "../Pages/Registraion";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/eventdetails/:eventId",
-        element: <Eventdetails></Eventdetails>,
+        element: <PrivateRoute><Eventdetails></Eventdetails></PrivateRoute>,
         loader: () => fetch("https://api.npoint.io/5b9e286fdc8f467883c3"),
       },
       {

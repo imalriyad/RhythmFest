@@ -1,32 +1,48 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 import { useContext } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { signin } = useContext(AuthContext);
-  const loginHandler = (e) => {
+  const { siginIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const {state} = useLocation()
+
+  const signInHandler = (e) => {
     e.preventDefault();
-   
     const email = e.target.email.value;
     const password = e.target.password.value;
-    signin(email, password)
+    siginIn(email, password)
       .then(() => {
-        e.target.reset()
-        toast.success('You are successfully logged in')
+        toast.success("Successfully Login!");
+        navigate(state ? state : '/')
+  
       })
-      .catch((err) => toast.error(`${err.message.slice(17,).replace(")",'')}`));
+      .catch((error) =>
+        toast.error(`${error.message.slice(22).replace(")", "")}`)
+      );
   };
+  const googleSignInHandler = () => {
+    const gooleAuthProvider = new GoogleAuthProvider();
+    googleSignIn(gooleAuthProvider)
+      .then(() => {
+        toast.success("Successfully toasted!");
+        navigate(state ? state : '/')
+      })
+      .catch((error) =>
+        toast.error(`${error.message.slice(22).replace(")", "")}`)
+      );
+  };
+
   return (
     <div className="px-4">
-      <div><Toaster/></div>
-
       <div className="w-full max-w-sm mx-auto mt-[4%] p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <htmlForm className="space-y-6" action="#">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-            Login in to our Account
+            Login 
           </h5>
-          <form onSubmit={loginHandler}>
+          <form onSubmit={signInHandler}>
             <div>
               <label
                 htmlFor="email"
@@ -83,7 +99,7 @@ const Login = () => {
         </htmlForm>
         <div className="divider">continue with</div>
         <div className="flex">
-          <button className="btn w-full">
+          <button onClick={googleSignInHandler} className="btn w-full">
             <img
               className="h-[20px] w-[20px]"
               src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png"
