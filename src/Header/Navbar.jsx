@@ -40,7 +40,7 @@ const NavbarMenuBar = () => {
             </ul>
           </div>
           <a className="w-6/6 md:w-6/12">
-            <img src="/public/logo.png" alt="" />
+            <img src="https://i.ibb.co/M8Y2HBJ/logo.png" alt="" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -51,7 +51,7 @@ const NavbarMenuBar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-12 border border-black rounded-full">
-                <img src="/src/assets/react.svg" />
+                <img src="https://i.ibb.co/cQmcvfp/blankdp.png" />
               </div>
             </label>
             <ul

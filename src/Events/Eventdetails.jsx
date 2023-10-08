@@ -18,13 +18,13 @@ const Eventdetails = () => {
   } = filterObj;
   return (
     <div
-      className="h-screen rounded-lg text-white "
+      className="h-auto rounded-lg text-white "
       style={{
         backgroundImage: `url(${eventImage})`,
         objectFit: "cover",
       }}
     >
-      <div className="hero-overlay bg-opacity-60">
+      <div className="hero-overlay rounded-lg bg-opacity-60">
       <div className="md:flex md:px-10 px-4 items-center  justify-between">
         <div className="md:w-6/12 p-2 md:my-[10%]">
           <h1 className="md:text-5xl text-2xl font-semibold mt-4">
@@ -56,7 +56,7 @@ const Eventdetails = () => {
         <input type="text" required placeholder="Your Name" className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm" />
          <input type="email" required placeholder="Your Paypal Email" className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm" />
          <input type="number" required placeholder="Your Paypal Number" className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm" />
-         <button className="btn max-w-sm">Pay ${ticketPrice} with<img src="/public/paypal-logo.png" className="w-[70px]" alt="" /></button>
+         <button className="btn max-w-sm">Pay ${ticketPrice} with<img src="https://i.ibb.co/sV4m6hm/paypal-logo.png" className="w-[70px]" alt="" /></button>
         </form>
       </div>
     </div>
