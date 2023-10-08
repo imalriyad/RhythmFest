@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopArtists = () => {
+const Topartis = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const TopArtists = () => {
     );
 };
 
-export default TopArtists;
+export default Topartis;

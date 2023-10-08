@@ -56,7 +56,7 @@ const Eventdetails = () => {
         <input type="text" required placeholder="Your Name" className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm" />
          <input type="email" required placeholder="Your Paypal Email" className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm" />
          <input type="number" required placeholder="Your Paypal Number" className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm" />
-         <button className="btn max-w-sm">Pay ${ticketPrice} with<img src="https://i.ibb.co/sV4m6hm/paypal-logo.png" className="w-[70px]" alt="" /></button>
+         <button className="btn max-w-sm">Pay ${ticketPrice} with<img src="https://i.ibb.co/Z6GshGq/paypal-logo.png" className="w-[70px]" alt="" /></button>
         </form>
       </div>
     </div>

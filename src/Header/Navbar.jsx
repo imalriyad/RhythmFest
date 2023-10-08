@@ -40,7 +40,7 @@ const NavbarMenuBar = () => {
             </ul>
           </div>
           <a className="w-6/6 md:w-6/12">
-            <img src="https://i.ibb.co/M8Y2HBJ/logo.png" alt="" />
+            <img src="https://i.ibb.co/yRWsg7r/logo.png" alt="" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
