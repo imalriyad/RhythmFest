@@ -23,7 +23,7 @@
 
 
 #### Live Link : 
-https://api.npoint.io/83ee0de9c4933fec120b
+https://rhythmfest.netlify.app/
 #### Api Link :
 https://api.npoint.io/83ee0de9c4933fec120b
 
