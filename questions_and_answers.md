@@ -68,12 +68,12 @@ console.log(food);
 - C: `['🍝', '🍕', '🍫', '🥑', '🍔']`
 - D: `ReferenceError`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>A:['🍕', '🍫', '🥑', '🍔']</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>Changing the info.favoriteFood property does not modify the food array</i>
 
 </p>
 </details>
@@ -93,12 +93,12 @@ console.log(sayHi());
 - C: `Hi there, null`
 - D: `ReferenceError`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b> B: `Hi there, undefined`</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>You have a funtion named sayHi that expect a name as parameter to return `Hi there, ${name}` but you called this funtion without any argument thats why the function will be return B: `Hi there, undefined`</i>
 
 </p>
 </details>
@@ -121,12 +121,12 @@ console.log(count);
 - C: 3
 - D: 4
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>C: 3</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>In js 0 is considerd as a falsy value . because of if(num) condition only 1,2,3 will be loop so only 3 time will be looped thats why answer is C: 3</i>
 
 </p>
 </details>

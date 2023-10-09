@@ -1,5 +1,8 @@
-function sum(a, b) {
-    return a + b;
-  }
-  
-  console.log(typeof sum(1, "2"));
+let count = 0;
+const nums = [0, 1, 2, 3];
+
+nums.forEach((num) => {
+  if (num) count += 1;
+});
+
+console.log(count);
