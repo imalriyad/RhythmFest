@@ -4,9 +4,11 @@ import Footer from "../Header/Footer";
 
 const Layout = () => {
   return (
-    <div className="mx-auto max-w-screen-2xl">
+   <div>
+    <div className="mx-auto max-w-screen-2xl relative">
       <NavbarMenuBar></NavbarMenuBar>
       <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
