@@ -12,7 +12,14 @@ const NavbarMenuBar = () => {
       .then(() => toast.success("Logout sucessful"))
       .catch((err) => console.log(err));
   };
-  const menuItems = ["Home","Events" ,"About", "Blogs", "Gallery", "Contact"];
+  const menuItems = [
+    "Home",
+    "Events",
+    "About",
+    "Booked Ticket",
+    "Gallery",
+    "Contact",
+  ];
   const menu = menuItems.map((item) => (
     <NavLink key={item} to={`${item === "Home" ? "/" : item}`}>
       <li>
@@ -84,16 +91,20 @@ const NavbarMenuBar = () => {
               tabIndex={0}
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
-          
-              <button className="btn btn-outline">
-              Profile
-              </button>
-         
-              {
-                user ? <button onClick={logOutHandler} className="btn mt-2 btn-outline">
-                <a>Logout</a>
-              </button> : <Link to={'/Login'} className="btn mt-2 btn-outline">Login</Link>
-              }
+              <button className="btn btn-outline">Profile</button>
+
+              {user ? (
+                <button
+                  onClick={logOutHandler}
+                  className="btn mt-2 btn-outline"
+                >
+                  <a>Logout</a>
+                </button>
+              ) : (
+                <Link to={"/Login"} className="btn mt-2 btn-outline">
+                  Login
+                </Link>
+              )}
             </ul>
           </div>
         </div>

@@ -5,7 +5,8 @@ const Banner = () => {
         className="rounded-xl h-auto "
         style={{
           backgroundImage: "url(https://i.ibb.co/D8M0PwN/hero.jpg)",
-          objectFit:'cover'
+          objectFit:'cover',
+         
         }}
       >
         <div className="md:px-8 px-4">

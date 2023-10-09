@@ -4,7 +4,7 @@ import EventCard from "./EventCard";
 const Event = () => {
     const [data,setData] = useState([])
     useEffect(()=>{
-        fetch('https://api.npoint.io/b1a4f295cd185da29ac0')
+        fetch('https://api.npoint.io/83ee0de9c4933fec120b')
         .then(res => res.json())
         .then(data => setData(data))
     },[])
