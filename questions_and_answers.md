@@ -126,7 +126,7 @@ console.log(count);
 
 #### Answer: ?
 
-<i>In js 0 is considerd as a falsy value . because of if(num) condition only 1,2,3 will be loop so only 3 time will be looped thats why answer is C: 3</i>
+<i>In js 0 is considerd as a falsy value . So, for each truthy value (1, 2, and 3), the count variable is incremented by 1. As a result, the final value of count is 3</i>
 
 </p>
 </details>
