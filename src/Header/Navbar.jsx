@@ -22,15 +22,15 @@ const NavbarMenuBar = () => {
   ];
   const menu = menuItems.map((item) => (
     <NavLink key={item} to={`${item === "Home" ? "/" : item}`}>
-      <li>
-        <a>{item}</a>
+      <li className="font-semibold">
+        <p>{item}</p>
       </li>
     </NavLink>
   ));
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 drop-shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -65,9 +65,7 @@ const NavbarMenuBar = () => {
         </div>
         <div className="navbar-end">
           {user?.displayName ? (
-            <h1 className="font-bold text-maincolor mr-3">
-              {user?.displayName}
-            </h1>
+            <h1 className="font-extrabold mr-3">{user?.displayName}</h1>
           ) : (
             <Link to={"/Login"}>
               {" "}
@@ -79,7 +77,7 @@ const NavbarMenuBar = () => {
 
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 border-2 border-maincolor rounded-full">
+              <div className="w-10 border-2 border-black rounded-full">
                 {user?.photoURL ? (
                   <img src={`${user?.photoURL}`} alt="" />
                 ) : (
@@ -91,7 +89,9 @@ const NavbarMenuBar = () => {
               tabIndex={0}
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
-              <button className="btn btn-outline">Profile</button>
+              <button className="btn btn-neutral text-white normal-case">
+                {user?.email}
+              </button>
 
               {user ? (
                 <button

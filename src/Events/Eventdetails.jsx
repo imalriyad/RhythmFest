@@ -19,7 +19,9 @@ const Eventdetails = () => {
     id,
   } = filterObj;
 
-  const handleTicketBuy = (id) => {
+  const handleTicketBuy = (e) => {
+    e.preventDefault()
+
     const newArray = [];
     const lsStoreEvent = JSON.parse(localStorage.getItem("booked"));
     if (!lsStoreEvent) {
@@ -77,33 +79,33 @@ const Eventdetails = () => {
               </button>
             </Link>
           </div>
-          <div className="flex flex-col md:w-4/12 space-y-5 mx-auto">
+          <form onSubmit={handleTicketBuy} className="flex flex-col md:w-4/12 space-y-5 mx-auto">
             <h1 className="md:text-4xl text-2xl font-semibold mt-4">
               Book your ticket before its too late!
             </h1>
             <input
               type="text"
               required
-              defaultValue={"Riyad"}
+            
               placeholder="Your Name"
               className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm"
             />
             <input
               type="email"
               required
-              defaultValue={"imalriyad@gmail.com"}
+           
               placeholder="Your Paypal Email"
               className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm"
             />
             <input
               type="number"
               required
-              defaultValue={6}
+          
               placeholder="Your Paypal Number"
               className="input input-bordered text-black focus:outline-none input-md w-full max-w-sm"
             />
             <button
-              onClick={() => handleTicketBuy(id)}
+              type="submit"
               className="btn max-w-sm"
             >
               Pay ${ticketPrice} with
@@ -113,7 +115,7 @@ const Eventdetails = () => {
                 alt=""
               />
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

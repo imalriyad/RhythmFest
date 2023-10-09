@@ -11,9 +11,7 @@ const Artists = () => {
         centeredSlides={true}
         spaceBetween={10}
         grabCursor={true}
-        pagination={{
-          clickable: true,
-        }}
+        
         loop={true}
         modules={[Pagination]}
         className="mySwiper"

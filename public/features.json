@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Millions of songs",
+    "description": "Explore an extensive library of music with millions of songs from various genres."
+  },
+  {
+    "id": 2,
+    "title": "Event Update",
+    "description": "Stay informed about the latest updates and happenings in the world of music events."
+  },
+  {
+    "id": 3,
+    "title": "Musical events",
+    "description": "Immerse yourself in unforgettable musical experiences with our featured events."
+  },
+
+  {
+    "id": 5,
+    "title": "Live streaming",
+    "description": "Enjoy live streaming of your favorite music events from the comfort of your home."
+  },
+  {
+    "id": 6,
+    "title": "Ticket Buying",
+    "description": "Securely purchase tickets for upcoming music events with ease and convenience."
+  },
+  {
+    "id": 7,
+    "title": "User management",
+    "description": "Manage your user profile and preferences to enhance your music event experience."
+  }
+]
