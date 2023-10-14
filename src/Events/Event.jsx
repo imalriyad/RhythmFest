@@ -4,10 +4,11 @@ import EventCard from "./EventCard";
 const Event = () => {
     const [data,setData] = useState([])
     useEffect(()=>{
-        fetch('https://api.npoint.io/83ee0de9c4933fec120b')
+        fetch('eventData.json')
         .then(res => res.json())
         .then(data => setData(data))
     },[])
+    console.log(data);
   return (
     <div className="bg-[#F5F7FA] p-4  md:p-10 rounded my-20">
       <h1 className="md:text-[40px] md:mb-4 text-[30px] font-bold">Upcoming <span className="text-maincolor">Events</span></h1>

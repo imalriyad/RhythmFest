@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             <Bookedticket></Bookedticket>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://api.npoint.io/83ee0de9c4933fec120b"),
+        loader: () => fetch("eventData.json"),
       },
       {
         path: "/Gallery",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             <Eventdetails></Eventdetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://api.npoint.io/83ee0de9c4933fec120b"),
+        loader: () => fetch("eventData.json"),
       },
       {
         path: "/Login",

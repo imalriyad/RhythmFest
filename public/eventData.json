@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "eventDate": "July 10-11, 2023",
+      "eventName": "Summer Music Festival",
+      "eventTime": "Starts at 2:00pm - Ends at 10:00pm",
+      "eventImage": "https://i.postimg.cc/qBs3HXS8/1.jpg",
+      "ticketPrice": 50,
+      "eventLocation": "Sunset Park, Miami",
+      "eventDescription": "Join us for a weekend of live music, food, and fun in the sun! Our Summer Music Festival features top artists from various genres, ensuring a memorable musical experience for all attendees. From rock to pop, hip-hop to electronic dance music, our lineup has something for everyone. In addition to the incredible music, indulge in delicious food and beverages from local vendors, relax in shaded lounges, and enjoy interactive art installations. With family-friendly activities and a vibrant atmosphere, it's the perfect way to kick off your summer. Grab your tickets now and be part of this unforgettable festival."
+    },
+    {
+      "id": 2,
+      "eventDate": "August 20, 2023",
+      "eventName": "Rock Legends Reunion",
+      "eventTime": "Starts at 7:00pm - Ends at 11:00pm",
+      "eventImage": "https://i.postimg.cc/TYQ5p2R1/2.jpg",
+      "ticketPrice": 60,
+      "eventLocation": "Rock Arena, Chicago",
+      "eventDescription": "Get ready to rock out with legendary bands from the '70s and '80s. This reunion event will take you on a nostalgic journey through classic rock hits and electrifying performances. Join us for an unforgettable night of guitar riffs, pounding drums, and soaring vocals. From iconic rock anthems to timeless ballads, these legendary bands will transport you back in time. The energy and passion of the musicians will leave you breathless. It's a one-of-a-kind experience for rock enthusiasts of all ages. Don't miss your chance to witness these rock legends in action. Secure your tickets now and relive the magic of rock 'n' roll history."
+    },
+    {
+      "id": 3,
+      "eventDate": "September 15, 2023",
+      "eventName": "EDM Extravaganza",
+      "eventTime": "Starts at 9:00pm - Ends at 3:00am",
+      "eventImage": "https://i.postimg.cc/YqtmrLBT/3.jpg",
+      "ticketPrice": 45,
+      "eventLocation": "Electric Arena, Las Vegas",
+      "eventDescription": "Experience the energy of electronic dance music like never before! Our EDM Extravaganza brings world-renowned DJs and mind-blowing light shows to create an unforgettable dance party. Get ready to dance the night away to the hottest beats and pulsating rhythms. Our lineup of top EDM artists will keep the party going until the early hours. The spectacular visuals and immersive sound will transport you to another world. Whether you're a seasoned raver or new to the EDM scene, this extravaganza is for you. Join us and be part of an epic night filled with music, lights, and good vibes. Get your tickets now and prepare to dance until dawn."
+    },
+    {
+      "id": 4,
+      "eventDate": "June 25, 2023",
+      "eventName": "Jazz Under the Stars",
+      "eventTime": "Starts at 8:00pm - Ends at 10:30pm",
+      "eventImage": "https://i.postimg.cc/3NF4jYmL/4.jpg",
+      "ticketPrice": 40,
+      "eventLocation": "Starry Park, New Orleans",
+      "eventDescription": "Relax and unwind to the smooth sounds of jazz under a starry night sky. This intimate event features talented jazz musicians in a tranquil outdoor setting. Immerse yourself in the soulful melodies and improvisations of jazz while enjoying a picnic-style evening. The ambiance is perfect for couples seeking a romantic night out or friends looking for a laid-back gathering. Bring your blankets and chairs, and savor the enchanting tunes of jazz legends and emerging artists alike. Whether you're a jazz enthusiast or new to the genre, this night promises to be a memorable musical journey. Tickets are limited, so book yours now for a magical night of jazz under the stars."
+    },
+    {
+      "id": 5,
+      "eventDate": "July 8, 2023",
+      "eventName": "Country Music Rodeo",
+      "eventTime": "Starts at 6:30pm - Ends at 11:00pm",
+      "eventImage": "https://i.postimg.cc/Gm28Y02Q/5.jpg",
+      "ticketPrice": 55,
+      "eventLocation": "Wild West Arena, Nashville",
+      "eventDescription": "Yeehaw! Grab your cowboy boots and join us for a country music rodeo. Enjoy live country tunes, line dancing, and the thrill of a rodeo show. Experience the heart and soul of country music with performances by top country artists. From honky-tonk classics to modern hits, our lineup will have you two-stepping all night. In addition to the music, witness the excitement of a real rodeo with bull riding, barrel racing, and more. Put on your best western attire and get ready for a night of country fun. Whether you're a die-hard country fan or just looking for a boot-stomping good time, this event is for you. Grab your tickets and saddle up for a wild country rodeo!"
+    },
+    {
+      "id": 6,
+      "eventDate": "October 5, 2023",
+      "eventName": "Indie Music Showcase",
+      "eventTime": "Starts at 7:30pm - Ends at 11:00pm",
+      "eventImage": "https://i.postimg.cc/Bb0P1XLL/6.jpg",
+      "ticketPrice": 35,
+      "eventLocation": "The Indie Loft, San Francisco",
+      "eventDescription": "Discover the next big indie artists at our Indie Music Showcase. This event celebrates emerging talents in the indie music scene, bringing you fresh and unique sounds. Immerse yourself in a diverse range of musical styles, from indie rock to folk, electronic to experimental. Our carefully curated lineup features up-and-coming musicians who are pushing the boundaries of music. Be part of the indie music movement and witness performances that defy conventions. Whether you're an indie music aficionado or new to the scene, this showcase promises an unforgettable night of musical exploration. Support independent artists and book your tickets now for a night of indie magic."
+    },
+    {
+      "id": 7,
+      "eventDate": "November 12, 2023",
+      "eventName": "Classical Symphony Gala",
+      "eventTime": "Starts at 7:00pm - Ends at 10:00pm",
+      "eventImage": "https://i.postimg.cc/JhSkMTRQ/7.jpg",
+      "ticketPrice": 75,
+      "eventLocation": "Symphony Hall, New York",
+      "eventDescription": "Experience the grandeur of classical music at our Symphony Gala. Renowned orchestras and soloists will perform timeless classical masterpieces in a prestigious venue. Immerse yourself in the sublime harmonies of symphonies, concertos, and operatic arias. Our gala brings together world-class musicians who will take you on a musical journey through centuries of classical compositions. Enjoy the elegance and sophistication of a black-tie event while reveling in the beauty of classical music. Whether you're a seasoned classical music enthusiast or a newcomer, this gala promises a night of cultural enrichment. Secure your tickets now for a magical evening of classical symphonies."
+    },
+    {
+      "id": 8,
+      "eventDate": "May 14, 2023",
+      "eventName": "Reggae Beach Party",
+      "eventTime": "Starts at 12:00pm - Ends at 6:00pm",
+      "eventImage": "https://i.postimg.cc/ZR3yRrRz/8.jpg",
+      "ticketPrice": 30,
+      "eventLocation": "Sandy Bay Beach, Jamaica",
+      "eventDescription": "Feel the rhythm and vibes of reggae at our Beach Party. Relax on the sandy shores, enjoy reggae beats, and savor tropical cocktails. Join us for a laid-back beach gathering with live reggae bands and DJs spinning reggae classics and modern hits. Dance barefoot in the sand, soak up the sun, and let the reggae music transport you to an island paradise. This family-friendly event is perfect for a day of fun and relaxation by the sea. Bring your beach towels, shades, and smiles, and let the reggae rhythms set the mood. Whether you're a reggae enthusiast or just looking for a beach escape, this party is your ticket to a day of pure relaxation and good vibes. Book your tickets now and be part of the ultimate Reggae Beach Party."
+    }
+  ]
+  

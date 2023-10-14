@@ -1,6 +1,4 @@
 import Event from "../Events/Event";
-
-
 const Events = () => {
     return (
         <div>
